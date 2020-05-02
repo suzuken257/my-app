@@ -1,0 +1,22 @@
+.wrapper
+  .header
+    .header__title  タイトル
+    .header__right  ログイン
+  .main
+    .main__side
+      %ul
+        %li スポーツ
+        %li お笑い
+        %li 本
+        %li 経済
+    .main__content
+      - @posts.each do |post|
+        .main__content__box
+          %span
+            %i.fa.fa-list-ul
+            %ul(class="more_list")
+              %li
+              =link_to'削除', "/posts/#{post.id}", method: :delete
+          %img(src="post.image" alt="")/
+          = simple_format(post.text)
+          = post.name 

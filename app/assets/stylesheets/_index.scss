@@ -1,0 +1,46 @@
+*  {
+  box-sizing: border-box;
+}
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  .header  {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    &__title  {
+      font-size: 30px;
+    }
+    &__right  {
+      font-size: 20px;
+    }
+  }
+  .main {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    &__side {
+      width: 240px;
+      height: auto;
+      background-color: darkgray;
+      ul{
+        li {
+          font-size: 15px;
+        }
+      }
+    }
+    &__content  {
+      background-color: lightcyan;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      &__box  {
+        width: 100px;
+        height: 100px;
+        
+      }
+    }
+  }
+}
