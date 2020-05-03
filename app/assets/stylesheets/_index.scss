@@ -7,20 +7,34 @@
   .header  {
     height: 60px;
     width: 100%;
+    background-color: blanchedalmond;
     display: flex;
     justify-content: space-between;
-    background-color: blanchedalmond;
+    align-items: center;
+    &__left {
+
+    }
     &__title  {
       font-size: 30px;
-    }
+      text-align: center;
+      display: flex;
     &__right  {
       font-size: 20px;
+      &__post {
+      
+      }
+      &__login  {
+        display: inline;
+      }
+    }
+      
     }
   }
   .main {
     height: 90vh;
     width: 100%;
     display: flex;
+
     &__side {
       width: 240px;
       height: auto;
@@ -38,10 +52,25 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      overflow: scroll;
       &__box  {
-        width: 300px;
-        height: 400px;
-        
+        margin: 10px 10px;
+        width: 288px;
+        height: 280px;
+        background-color: whitesmoke;
+        &__item {
+          background-color: peru;
+          height: 200px;
+        }
+        &__text {
+          width: 100%;
+          &__more {
+            display: inline;
+            &__list {
+
+            }
+          }
+        }
       }
     }
   }

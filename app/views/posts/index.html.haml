@@ -1,9 +1,18 @@
 .wrapper
   .header
-    .header__title  タイトル
-    .header__up  
-      = link_to "投稿", new_post_path
-    .header__right  ログイン
+    .header__left
+      <i class="fas fa-chess-queen"></i>
+    .header__title 
+      タイトル
+    .header__right   
+      %span(class="header__right__login")
+      - if user_signed_in?
+        .user_nav.grid-6
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to  "投稿する", "/tweets/new", class: "post"
+      - else
+        .grid-6
+          = link_to "ログイン", new_user_session_path, class: 'post'
   .main
     .main__side
       %ul
@@ -14,11 +23,17 @@
     .main__content
       - @posts.each do |post|
         .main__content__box
-          %span
-            %i.fa.fa-list-ul
-            %ul(class="more_list")
-              %li
-              =link_to'削除', "/posts/#{post.id}", method: :delete
-          %img(src="post.image" alt="")/
-          = simple_format(post.text)
-          = post.name 
+          .main__content__box__item   
+            %img(src="post.image" alt="")/
+          .main__content__box__text
+            = simple_format(post.text)
+            = post.name 
+            %span(class="main__content__box__text__more")
+              %i.fa.fa-list-ul
+                %ul(class="main__content__box__text__more__list")
+                  %li
+                    =link_to '詳細', "/posts/#{post.id}"
+                  %li
+                    =link_to '編集', "/posts/#{post.id}/edit", method: :get
+                  %li
+                    =link_to '削除', "/posts/#{post.id}", method: :delete
