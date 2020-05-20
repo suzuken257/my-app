@@ -50,6 +50,7 @@
       height: 100%;
       width: 100%;
       display: flex;
+<<<<<<< HEAD
       justify-content: space-between;
       flex-wrap: wrap;
       overflow: scroll;
@@ -71,6 +72,12 @@
             }
           }
         }
+=======
+      &__box  {
+        width: 100px;
+        height: 100px;
+        
+>>>>>>> parent of 04f5d8f... destroyまで
       }
     }
   }
