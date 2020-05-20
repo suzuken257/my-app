@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     Post.create(post_params)
   end
   def destroy
-    post=Post.find(params[:id])
+    post=Post.find(params_id)
     post.destroy
   end
   def edit
