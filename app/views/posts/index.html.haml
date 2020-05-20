@@ -1,23 +1,23 @@
 .wrapper
   .header
-<<<<<<< HEAD
+
     .header__left
       <i class="fas fa-chess-queen"></i>
     .header__title 
       タイトル
     .header__right   
       %span(class="header__right__login")
-      - if user_signed_in?
         .user_nav.grid-6
+
           = link_to "ログアウト", destroy_user_session_path, method: :delete
           = link_to  "投稿する", "/tweets/new", class: "post"
       - else
         .grid-6
           = link_to "ログイン", new_user_session_path, class: 'post'
-=======
-    .header__title  タイトル
-    .header__right  ログイン
->>>>>>> parent of 04f5d8f... destroyまで
+
+          = link_to  "投稿する", new_post_path, class: "post"
+          = "ログイン"
+
   .main
     .main__side
       %ul
